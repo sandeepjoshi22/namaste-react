@@ -1,0 +1,5 @@
+export const appLogoUrl =
+  "https://s3.amazonaws.com/cdn.designcrowd.com/blog/39-Food-Delivery-Logos-That-Will-Leave-You-Hungry-For-More/fooba-by-wanwan-designcrowd.jpg";
+ 
+
+export const imageBaseUrl = "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/"

@@ -1,24 +1,4 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-
-/**
- * - Header
- *    - logo
- *    - links
- * - Body
- *    - search
- *    - Restaurant cards
- */
-
-const appLogoUrl =
-  "https://s3.amazonaws.com/cdn.designcrowd.com/blog/39-Food-Delivery-Logos-That-Will-Leave-You-Hungry-For-More/fooba-by-wanwan-designcrowd.jpg";
- 
-const kfcLogoUrl =  "https://upload.wikimedia.org/wikipedia/en/5/57/KFC_logo-image.svg"; 
-const dominosLogoUrl = "https://upload.wikimedia.org/wikipedia/commons/7/74/Dominos_pizza_logo.svg";
-
-const imageBaseUrl = "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/"
-
-const restList = [
+export const restList = [
     {
       info: {
         id: "831065",
@@ -33,7 +13,7 @@ const restList = [
           "Tibetan",
           "Desserts"
         ],
-        avgRating: 4.1,
+        avgRating: 3.8,
         parentId: "61955",
         avgRatingString: "4.1",
         totalRatingsString: "511",
@@ -115,7 +95,7 @@ const restList = [
         cuisines: [
           "Pizzas"
         ],
-        avgRating: 4.2,
+        avgRating: 3.7,
         parentId: "721",
         avgRatingString: "4.2",
         totalRatingsString: "435",
@@ -1745,7 +1725,7 @@ const restList = [
           "Italian",
           "Desserts"
         ],
-        avgRating: 4.7,
+        avgRating: 2.7,
         parentId: "281782",
         avgRatingString: "4.7",
         totalRatingsString: "2.5K+",
@@ -1832,61 +1812,3 @@ const restList = [
       }
     }
   ];
-
-const Header = () => {
-  return (
-    <div className="header">
-      <div className="logo">
-        <img alt="logo-img" src={appLogoUrl} />
-      </div>
-
-      <div className="header-links">
-        <ul>
-          <li>Home</li>
-          <li>Contact</li>
-          <li>Cart</li>
-        </ul>
-      </div>
-    </div>
-  );
-};
-
-const RestaurantCard = (props) => {
-    const {data} = props;
-    const {name, avgRating, costForTwo, cloudinaryImageId} = data?.info;
-    return (
-        <div className="card-rest">
-            <img alt="rest-img" src={imageBaseUrl+cloudinaryImageId}/>
-            <h2>{name}</h2>
-            <h3>{avgRating}</h3>
-            <h3>{costForTwo}</h3>
-        </div>
-    )
-}
-
-const Body = () => {
-  return (
-    <div className="body">
-      <div className="search">Search</div>
-      <div className="cards-container">
-        {
-            restList.map(restaurant => {
-                return (<RestaurantCard key={restaurant.info.id} data={restaurant}/>)
-            })
-        }
-      </div>
-    </div>
-  );
-};
-
-const AppContainer = () => {
-  return (
-    <div className="app-container">
-      <Header />
-      <Body />
-    </div>
-  );
-};
-
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<AppContainer />);
